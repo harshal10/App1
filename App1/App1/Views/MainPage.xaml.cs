@@ -18,8 +18,8 @@ namespace App1.Views
             MasterBehavior = MasterBehavior.Popover;
 
             //Updating default page to About page
-            //MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
-            MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)

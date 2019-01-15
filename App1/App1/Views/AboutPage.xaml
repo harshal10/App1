@@ -52,9 +52,10 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="CPSC - 5250 01 -WQ19&#x0a;" />
+                                <!--updating about page content-->
                                 <Span Text="Student - Harshal Vadnere&#x0a;"/>
-                                <Span Text ="Date/Time - 01/09/2019, 8:00 PM&#x0a;" />
+                                <Span Text="CPSC-5250-WQ19 Asignement Week 2&#x0a;" />
+                                <Span Text ="Date/Time - 01/15/2019, 8:00 PM&#x0a;" />
                                 <!--
                                 <Span Text="Xamarin Platform" FontAttributes="Bold" />
                                 <Span Text="." />
