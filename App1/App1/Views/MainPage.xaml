@@ -17,7 +17,7 @@
             </NavigationPage.Icon>
             <x:Arguments>
                 <!-- OG value- views:ItemsPage-->
-                <views:ItemsPage />
+                <views:AboutPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

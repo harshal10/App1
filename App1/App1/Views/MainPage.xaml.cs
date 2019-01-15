@@ -18,8 +18,8 @@ namespace App1.Views
             MasterBehavior = MasterBehavior.Popover;
 
             //Updating default page to About page
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
-            //MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -28,15 +28,15 @@ namespace App1.Views
             {
                 switch (id)
                 {
-                    //fliping order to make default to About page
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
+                    //X fliping order to make default to About page
+                   
 
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    
+                    case (int)MenuItemType.About:
+                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        break;
                 }
             }
 
