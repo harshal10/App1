@@ -22,7 +22,8 @@ namespace App1.Views
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 //adding new menu item
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="GamePage" }
+                new HomeMenuItem {Id = MenuItemType.GamePage, Title="GamePage" }
+
             };
 
             ListViewMenu.ItemsSource = menuItems;

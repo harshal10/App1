@@ -35,6 +35,7 @@ namespace App1.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+
                     //adding GamePage
                     case (int)MenuItemType.GamePage:
                         MenuPages.Add(id, new NavigationPage(new GamePage()));
