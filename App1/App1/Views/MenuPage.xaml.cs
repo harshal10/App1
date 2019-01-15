@@ -21,7 +21,8 @@ namespace App1.Views
                 //reordering menu items
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-               
+                //adding new menu item
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="GamePage" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

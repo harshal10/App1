@@ -7,7 +7,8 @@ namespace App1.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        GamePage //add new page
     }
     public class HomeMenuItem
     {
