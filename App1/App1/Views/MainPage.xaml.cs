@@ -28,15 +28,14 @@ namespace App1.Views
             {
                 switch (id)
                 {
-                    //X fliping order to make default to About page
-                   
-
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
+
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    
                 }
             }
 
