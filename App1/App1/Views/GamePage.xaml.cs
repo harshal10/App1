@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,5 +12,11 @@ namespace App1.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+
+        async void ButtonToLeaderboard(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Leaderboard());
+        }
+    }
 }

@@ -40,6 +40,11 @@ namespace App1.Views
                     case (int)MenuItemType.GamePage:
                         MenuPages.Add(id, new NavigationPage(new GamePage()));
                         break;
+
+                    //adding Leaderboard
+                    case (int)MenuItemType.Leaderbaord:
+                        MenuPages.Add(id, new NavigationPage(new GamePage()));
+                        break;
                 }
             }
 

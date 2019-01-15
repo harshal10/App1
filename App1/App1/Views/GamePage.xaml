@@ -15,12 +15,12 @@
                WidthRequest="300"
                HeightRequest="300"
                HorizontalOptions="Center" />
-<!--
+
                 <Button Text="Leaderboard"
                 Font="Larger"
                 HorizontalOptions="Center"
-                Clicked="ButtonScore"/>
-
+                Clicked="ButtonToLeaderboard"/>
+            <!--
                 <Button Text="Characters"
                 Font="Larger"
                 HorizontalOptions="Center"
