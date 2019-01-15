@@ -5,9 +5,27 @@
  
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            
+               <Label Text="Mellow Fox Game"
+               FontSize="40"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+                <Image Source="dragon.png"
+               WidthRequest="300"
+               HeightRequest="300"
+               HorizontalOptions="Center" />
+<!--
+                <Button Text="Leaderboard"
+                Font="Larger"
+                HorizontalOptions="Center"
+                Clicked="ButtonScore"/>
+
+                <Button Text="Characters"
+                Font="Larger"
+                HorizontalOptions="Center"
+                Clicked="ButtonCharacter"/>
+            -->
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>
