@@ -37,7 +37,7 @@ namespace App1.Views
                         break;
 
                     //adding GamePage
-                    case (int)MenuItemType.GamePage:
+                    case (int)MenuItemType.Game:
                         MenuPages.Add(id, new NavigationPage(new GamePage()));
                         break;
 
@@ -49,6 +49,11 @@ namespace App1.Views
                     //adding Characters
                     case (int)MenuItemType.Characters:
                         MenuPages.Add(id, new NavigationPage(new Characters()));
+                        break;
+
+                    //adding items
+                    case (int)MenuItemType.Items:
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                 }
             }

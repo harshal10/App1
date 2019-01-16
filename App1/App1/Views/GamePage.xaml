@@ -25,7 +25,12 @@
                 Font="Larger"
                 HorizontalOptions="Center"
                 Clicked="ButtonToCharacters"/>
-         
-            </StackLayout>
+
+            <Button Text="Items"
+                Font="Larger"
+                HorizontalOptions="Center"
+                Clicked="ButtonToItems"/>
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

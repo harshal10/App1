@@ -22,7 +22,8 @@ namespace App1.Views
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 //adding new menu item
-                new HomeMenuItem {Id = MenuItemType.GamePage, Title="GamePage" }
+                new HomeMenuItem {Id = MenuItemType.Game, Title="Game" },
+                new HomeMenuItem {Id = MenuItemType.Items, Title="Items" }
 
             };
 

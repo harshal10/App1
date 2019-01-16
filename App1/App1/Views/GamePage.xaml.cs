@@ -24,5 +24,11 @@ namespace App1.Views
         {
             await Navigation.PushAsync(new Leaderboard());
         }
+
+        //event handler for items button
+        async void ButtonToItems(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemsPage());
+        }
     }
 }
