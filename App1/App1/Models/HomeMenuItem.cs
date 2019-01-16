@@ -9,7 +9,8 @@ namespace App1.Models
         Browse,
         About,
         GamePage, //add new page
-        Leaderbaord 
+        Leaderbaord,
+        Characters
     }
     public class HomeMenuItem
     {

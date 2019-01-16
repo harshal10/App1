@@ -20,12 +20,12 @@
                 Font="Larger"
                 HorizontalOptions="Center"
                 Clicked="ButtonToLeaderboard"/>
-            <!--
+      
                 <Button Text="Characters"
                 Font="Larger"
                 HorizontalOptions="Center"
-                Clicked="ButtonCharacter"/>
-            -->
+                Clicked="ButtonToCharacters"/>
+         
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>
