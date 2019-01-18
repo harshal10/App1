@@ -16,7 +16,7 @@ namespace App1.Views
         //event handler for leaderbaord button
         async void ButtonToLeaderboard(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Leaderboard());
+            await Navigation.PushAsync(new LeaderboardPage());
         }
 
         //event handler for characters button

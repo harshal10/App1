@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App1.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Leaderboard : ContentPage
+	public partial class LeaderboardPage : ContentPage
 	{
-		public Leaderboard ()
+		public LeaderboardPage ()
 		{
 			InitializeComponent ();
 		}
