@@ -22,7 +22,7 @@ namespace App1.Views
         //event handler for characters button
         async void ButtonToCharacters(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Leaderboard());
+            await Navigation.PushAsync(new CharactersPage());
         }
 
         //event handler for items button

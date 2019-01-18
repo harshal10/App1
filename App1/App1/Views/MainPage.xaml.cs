@@ -48,7 +48,7 @@ namespace App1.Views
 
                     //adding Characters
                     case (int)MenuItemType.Characters:
-                        MenuPages.Add(id, new NavigationPage(new Characters()));
+                        MenuPages.Add(id, new NavigationPage(new CharactersPage()));
                         break;
 
                     //adding items
