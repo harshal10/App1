@@ -7,29 +7,67 @@ using Xamarin.Forms;
 
 using App1.Models;
 using App1.Views;
+using System.Linq;
 
 namespace App1.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        private static ItemsViewModel _instance;
+
+        public static ItemsViewModel Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ItemsViewModel();
+                }
+                return _instance;
+            }
+        }
+
+        public ObservableCollection<Item> DataSet { get; set; }
+        public Command LoadDataCommand { get; set; }
+        private bool _needsRefresh;
+
 
         public ItemsViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
+            Title = "Item List";
+            DataSet = new ObservableCollection<Item>();
+            LoadDataCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            /*
+            #region Messages
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                DataSet.Add(newItem);
+                await DataStore.AddAsync_Item(newItem);
             });
+            #endregion
+            */
+        }
+        // refresh check
+        public bool NeedsRefresh()
+        {
+            if (_needsRefresh)
+            {
+                _needsRefresh = false;
+                return true;
+            }
+
+            return false;
         }
 
-        async Task ExecuteLoadItemsCommand()
+
+        // refresh
+        public void SetNeedsRefresh(bool value)
+        {
+            _needsRefresh = value;
+        }
+
+        private async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;
@@ -38,12 +76,19 @@ namespace App1.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                DataSet.Clear();
+                var dataset = await DataStore.GetAllAsync_Item(true);
+                dataset = dataset
+                    .OrderBy(a => a.Id)
+                    .ThenBy(a => a.Name)
+                    .ThenBy(a => a.Description)
+                  
+                    .ToList();
+                foreach (var data in dataset)
                 {
-                    Items.Add(item);
+                    DataSet.Add(data);
                 }
+            
             }
             catch (Exception ex)
             {
@@ -53,6 +98,12 @@ namespace App1.ViewModels
             {
                 IsBusy = false;
             }
+        }
+        public void ForceDataRefresh()
+        {
+            // Reset
+            var canExecute = LoadDataCommand.CanExecute(null);
+            LoadDataCommand.Execute(null);
         }
     }
 }

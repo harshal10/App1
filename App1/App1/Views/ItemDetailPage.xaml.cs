@@ -11,27 +11,23 @@ namespace App1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        ItemDetailViewModel _viewModel;
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
 
-            BindingContext = this.viewModel = viewModel;
+            BindingContext = _viewModel = viewModel;
         }
 
         public ItemDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+            var data = new Item();
 
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+            _viewModel = new ItemDetailViewModel(data);
+            BindingContext = _viewModel;
         }
     }
 }

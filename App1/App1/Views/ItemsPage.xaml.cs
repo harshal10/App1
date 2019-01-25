@@ -16,14 +16,14 @@ namespace App1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        ItemsViewModel _viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = ItemsViewModel.Instance;
         }
+      
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
@@ -46,8 +46,25 @@ namespace App1.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            BindingContext = null;
+
+            if (ToolbarItems.Count > 0)
+            {
+                ToolbarItems.RemoveAt(0);
+            }
+
+            InitializeComponent();
+
+            if (_viewModel.DataSet.Count == 0)
+            {
+                _viewModel.LoadDataCommand.Execute(null);
+            }
+            else if (_viewModel.NeedsRefresh())
+            {
+                _viewModel.LoadDataCommand.Execute(null);
+            }
+
+            BindingContext = _viewModel;
         }
     }
 }
