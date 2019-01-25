@@ -35,8 +35,23 @@ namespace App1.Services
         private void InitilizeSeedData()
         {
             //new item
-            _itemDataset.Add(new Item("Armour", "Heavy duty protection",
+            _itemDataset.Add(new Item("Armour", "Heavy duty protection against big hits.",
                 "http://www.clipartbest.com/cliparts/7Ta/6qq/7Ta6qqbEc.png"));
+
+            _itemDataset.Add(new Item("Lightning", "Strikes oppenet with force.",
+                "http://www.clipartbest.com/cliparts/4Tb/4yM/4Tb4yMrac.gif"));
+
+            _itemDataset.Add(new Item("Fox", "Cunning fox creates diversion " +
+                "for player to attack the monster.",
+                "http://www.clipartbest.com/cliparts/niE/Eze/niEEze5BT.jpg"));
+
+            _itemDataset.Add(new Item("Sorcer's Stone", "Makes the player " +
+                "unbeatable for next two moves",
+                "https://img1.etsystatic.com/051/1/10757639/il_fullxfull.742129741_1iqy.jpg"));
+
+            _itemDataset.Add(new Item("Hippogriff", "Fierce fighting partner that helps player" +
+                "fly around the monster attacks.",
+                "http://www.hogwartsprofessor.com/wp-content/uploads/2011/11/hippogriff.jpg"));
 
         }
 
