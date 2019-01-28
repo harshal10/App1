@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App1.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CharactersPage : ContentPage
+	public partial class CharacterEditPage : ContentPage
 	{
-		public CharactersPage()
+		public CharacterEditPage ()
 		{
 			InitializeComponent ();
 		}

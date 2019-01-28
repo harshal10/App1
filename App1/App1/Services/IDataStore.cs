@@ -13,6 +13,7 @@ namespace App1.Services
         Task<bool> DeleteAsync_Item(Item data);
         Task<Item> GetAsync_Item(string id);
         Task<IEnumerable<Item>> GetAllAsync_Item(bool forceRefresh = false);
+        Task<IEnumerable<Character>> GetAllAsync_Char(bool forceRefresh = false);
     }
 }
 

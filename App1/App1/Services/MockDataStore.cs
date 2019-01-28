@@ -26,6 +26,8 @@ namespace App1.Services
 
         private List<Item> _itemDataset = new List<Item>();
 
+        private List<Character> _charDataset = new List<Character>();
+
         private MockDataStore()
         {
             InitilizeSeedData();
@@ -53,6 +55,15 @@ namespace App1.Services
                 "fly around the monster attacks.",
                 "http://www.hogwartsprofessor.com/wp-content/uploads/2011/11/hippogriff.jpg"));
 
+            //dummy data for character
+
+            _charDataset.Add(new Character("Harry", "Scar faced, dragon tattoed, demontor slayer",
+                13));
+
+            _charDataset.Add(new Character("Hermoine", "If knowledge could kill...",
+                14));
+
+            _charDataset.Add(new Character("Rom", "the sidekick", 15));
         }
 
         public async Task<bool> InsertUpdateAsync_Item(Item data)
@@ -76,8 +87,6 @@ namespace App1.Services
 
             return false;
         }
-
-
 
         public async Task<bool> AddAsync_Item(Item data)
         {
@@ -115,6 +124,11 @@ namespace App1.Services
         public async Task<IEnumerable<Item>> GetAllAsync_Item(bool forceRefresh = false)
         {
             return await Task.FromResult(_itemDataset);
+        }
+
+        public async Task<IEnumerable<Character>> GetAllAsync_Char(bool forceRefresh = false)
+        {
+            return await Task.FromResult(_charDataset);
         }
     }
 }
