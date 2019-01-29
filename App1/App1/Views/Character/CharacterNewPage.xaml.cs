@@ -31,13 +31,13 @@ namespace App1.Views
         private async void Save_Clicked(object sender, EventArgs e)
         {    
             MessagingCenter.Send(this, "AddData", Data);
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         // Cancel and go back a page in the navigation stack
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

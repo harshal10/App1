@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using App1.Models;
-
+using App1.ViewModels;
 
 namespace App1.Services
 {
@@ -66,6 +66,38 @@ namespace App1.Services
             _charDataset.Add(new Character("Rom", "the sidekick", 15));
         }
 
+        private void CreateTables()
+        {
+            // Do nothing...
+        }
+
+        // Delete the Datbase Tables by dropping them
+        public void DeleteTables()
+        {
+            // Implement
+        }
+
+        // Tells the View Models to update themselves.
+        private void NotifyViewModelsOfDataChange()
+        {
+            CharacterViewModel.Instance.SetNeedsRefresh(true);
+        }
+
+        public void InitializeDatabaseNewTables()
+        {
+            DeleteTables();
+
+            // make them again
+            CreateTables();
+
+            // Populate them
+            InitilizeSeedData();
+
+            // Tell View Models they need to refresh
+            NotifyViewModelsOfDataChange();
+        }
+        //Item
+        #region Item
         public async Task<bool> InsertUpdateAsync_Item(Item data)
         {
 
@@ -125,10 +157,38 @@ namespace App1.Services
         {
             return await Task.FromResult(_itemDataset);
         }
+        #endregion Item
+        //Character
+        #region Character
+        public async Task<bool> AddAsync_Character(Character data)
+        {
+            _charDataset.Add(data);
 
+            return await Task.FromResult(true);
+        }
+        public async Task<bool> UpdateAsync_Character(Character data)
+        {
+            var myData = _charDataset.FirstOrDefault(arg => arg.Name == data.Name);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
+
+            return await Task.FromResult(true);
+        }
+        public async Task<bool> DeleteAsync_Character(Character data)
+        {
+            var myData = _charDataset.FirstOrDefault(arg => arg.Name == data.Name);
+            _charDataset.Remove(myData);
+
+            return await Task.FromResult(true);
+        }
         public async Task<IEnumerable<Character>> GetAllAsync_Char(bool forceRefresh = false)
         {
             return await Task.FromResult(_charDataset);
         }
+        #endregion Character
     }
 }

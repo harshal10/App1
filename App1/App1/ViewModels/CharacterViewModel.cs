@@ -34,7 +34,7 @@ namespace App1.ViewModels
 
         public CharacterViewModel()
         {
-            Title = "Item List";
+            Title = "Character List";
             DataSet = new ObservableCollection<Character>();
             LoadDataCommand = new Command(async () => await ExecuteLoadCharCommand());
 
@@ -57,22 +57,6 @@ namespace App1.ViewModels
             #endregion Messages
 
         }
-
-        private Task UpdateAsync(Character data)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Task AddAsync(Character data)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Task DeleteAsync(Character data)
-        {
-            throw new NotImplementedException();
-        }
-
         // refresh check
         public bool NeedsRefresh()
         {
@@ -84,14 +68,11 @@ namespace App1.ViewModels
 
             return false;
         }
-
-
         // refresh
         public void SetNeedsRefresh(bool value)
         {
             _needsRefresh = value;
         }
-
         private async Task ExecuteLoadCharCommand()
         {
             if (IsBusy)
@@ -128,6 +109,23 @@ namespace App1.ViewModels
             // Reset
             var canExecute = LoadDataCommand.CanExecute(null);
             LoadDataCommand.Execute(null);
+        }
+        //Data operations
+        public Task UpdateAsync(Character data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<bool> AddAsync(Character data)
+        {
+            DataSet.Add(data);
+            var myReturn = await DataStore.AddAsync_Character(data);
+            return myReturn;
+        }
+
+        private Task DeleteAsync(Character data)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace App1.Views
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterNewPage()));
         }
 
         protected override void OnAppearing()
@@ -44,23 +44,23 @@ namespace App1.Views
 
             BindingContext = null;
 
-        if (ToolbarItems.Count > 0)
-        {
-            ToolbarItems.RemoveAt(0);
+            if (ToolbarItems.Count > 0)
+            {
+                ToolbarItems.RemoveAt(0);
+            }
+
+            InitializeComponent();
+
+            if (_viewModel.DataSet.Count == 0)
+            {
+                _viewModel.LoadDataCommand.Execute(null);
+            }
+            else if (_viewModel.NeedsRefresh())
+            {
+                _viewModel.LoadDataCommand.Execute(null);
+            }
+
+            BindingContext = _viewModel;
         }
-
-        InitializeComponent();
-
-        if (_viewModel.DataSet.Count == 0)
-        {
-            _viewModel.LoadDataCommand.Execute(null);
-        }
-    else if (_viewModel.NeedsRefresh())
-    {
-        _viewModel.LoadDataCommand.Execute(null);
-    }
-
-    BindingContext = _viewModel;
-}
     }
 }
