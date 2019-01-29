@@ -123,9 +123,11 @@ namespace App1.ViewModels
             return myReturn;
         }
 
-        private Task DeleteAsync(Character data)
+        private async Task<bool> DeleteAsync(Character data)
         {
-            throw new NotImplementedException();
+            DataSet.Remove(data); 
+            var myReturn = await DataStore.DeleteAsync_Character(data);
+            return myReturn;
         }
     }
 }

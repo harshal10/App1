@@ -30,5 +30,20 @@ namespace App1.Views
             _viewModel = new CharacterDetailViewModel(data);
             BindingContext = _viewModel;
         }
+
+        //private async void Edit_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new CharacterEditPage(_viewModel));
+        //}
+
+        private async void Delete_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CharacterDeletePage(_viewModel));
+        }
+
+        private async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.CharacterDetailsPage">
-    
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Edit" Clicked="Edit_Clicked" />-->
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" />
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout 
                 x:Name="DetailsRoot"
