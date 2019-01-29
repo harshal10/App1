@@ -19,9 +19,9 @@ namespace App1.Views
 			InitializeComponent ();
             Data = new Character
             {
-                Name = "Character Name",
+                Name = "Dough",
                 Description = "Special powers...",
-                Age = 10
+                Age = 20
             };
             BindingContext = this;
         }

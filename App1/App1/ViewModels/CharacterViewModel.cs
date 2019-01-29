@@ -111,9 +111,20 @@ namespace App1.ViewModels
             LoadDataCommand.Execute(null);
         }
         //Data operations
-        public Task UpdateAsync(Character data)
+        public async Task<bool> UpdateAsync(Character data)
         {
-            throw new NotImplementedException();
+            var myData = DataSet.FirstOrDefault(arg => arg.Name == data.Name);
+            if (myData == null)
+            {
+                return false;
+            }
+
+            myData.Update(data);
+            await DataStore.UpdateAsync_Character(myData);
+
+            _needsRefresh = true;
+
+            return true;
         }
 
         public async Task<bool> AddAsync(Character data)

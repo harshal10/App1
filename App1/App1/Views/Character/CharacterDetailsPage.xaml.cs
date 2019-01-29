@@ -31,10 +31,10 @@ namespace App1.Views
             BindingContext = _viewModel;
         }
 
-        //private async void Edit_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new CharacterEditPage(_viewModel));
-        //}
+        private async void Edit_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CharacterEditPage(_viewModel));
+        }
 
         private async void Delete_Clicked(object sender, EventArgs e)
         {

@@ -4,7 +4,7 @@
              x:Class="App1.Views.CharacterDetailsPage">
 
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem Text="Edit" Clicked="Edit_Clicked" />-->
+        <ToolbarItem Text="Edit" Clicked="Edit_Clicked" />
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" />
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
     </ContentPage.ToolbarItems>
