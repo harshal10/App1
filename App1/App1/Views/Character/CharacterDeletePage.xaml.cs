@@ -21,7 +21,6 @@ namespace App1.Views
 		{
             Data = viewModel.Data;
             InitializeComponent ();
-            InitializeComponent();
 
             // Set the data binding for the page
             BindingContext = _viewModel = viewModel;
